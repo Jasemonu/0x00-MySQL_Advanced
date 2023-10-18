@@ -7,10 +7,10 @@ import pymongo
 
 def list_all(mongo_collection):
     # Initialize an empty list to store the documents
-    document_list = []
     if not mongo_collection:
         return []
     # Iterate through the documents in the collection
+    document_list = []
     for document in mongo_collection.find():
         document_list.append(document)
     
