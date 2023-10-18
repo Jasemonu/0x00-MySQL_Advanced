@@ -8,8 +8,5 @@ import pymongo
 def list_all(mongo_collection):
     if not mongo_collection:
         return []
-    document_list = []
     documents = mongo_collection.find()
-    for document in documents:
-        document_list.append(document)
-    return document_list
+    return [document for document in documents]
