@@ -7,12 +7,13 @@ import pymongo
 
 def list_all(mongo_collection):
     # Initialize an empty list to store the documents
-    if not mongo_collection:
+    if mongo_collection is not None:
+        document_list = []
+        # Iterate through the documents in the collection
+        for document in mongo_collection.find():
+            document_list.append(document)
+        # Return the list of documents
+        return document_list
+    else:
+        # Return an empty list if the collection is None
         return []
-    # Iterate through the documents in the collection
-    document_list = []
-    for document in mongo_collection.find():
-        document_list.append(document)
-    
-    # Return the list of documents
-    return document_list
