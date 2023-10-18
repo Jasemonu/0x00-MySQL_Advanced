@@ -8,6 +8,7 @@ def list_all(mongo_collection):
     if mongo_collection is None:
         return []
     document_list = []
-    for document in mongo_collection.find():
+    documents = mongo_collection.find()
+    for document in documents:
         document_list.append(document)
     return document_list
