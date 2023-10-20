@@ -1,3 +1,3 @@
 // a script that displays the number of documents in a collection
 
-db.school.conutDocuments()
+db.school.count({})
